@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_colors",
+  "info": {
+    "singularName": "brand-color",
+    "pluralName": "brand-colors",
+    "displayName": "Brand Color"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

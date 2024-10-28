@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Style": {
+      "type": "enumeration",
+      "enum": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Outline Icon"
+      ]
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "full"
+      ]
+    }
+  }
+}
