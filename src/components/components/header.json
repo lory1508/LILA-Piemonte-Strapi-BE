@@ -2,15 +2,39 @@
   "collectionName": "components_components_headers",
   "info": {
     "displayName": "Header",
-    "icon": ""
+    "icon": "",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "Background": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "Subtitle": {
-      "type": "string"
+    "gradientFrom": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand-color.brand-color"
+    },
+    "gradientTo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand-color.brand-color"
+    },
+    "Title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.title"
+    },
+    "Paragraph": {
+      "type": "blocks"
     }
   }
 }

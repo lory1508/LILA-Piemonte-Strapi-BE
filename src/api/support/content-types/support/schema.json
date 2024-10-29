@@ -4,7 +4,8 @@
   "info": {
     "singularName": "support",
     "pluralName": "supports",
-    "displayName": "Support"
+    "displayName": "Support",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,20 @@
       "type": "richtext"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.button"
     }
   }
 }

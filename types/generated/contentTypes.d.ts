@@ -399,9 +399,45 @@ export interface ApiBrandColorBrandColor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomeHome extends Struct.CollectionTypeSchema {
+  collectionName: 'homes';
+  info: {
+    description: '';
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroSection: Schema.Attribute.Component<'components.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    ServiceSection: Schema.Attribute.Component<'components.title', false>;
+    socials: Schema.Attribute.Relation<'oneToMany', 'api::social.social'>;
+    SocialSection: Schema.Attribute.Component<'components.title', false>;
+    SupportSection: Schema.Attribute.Component<
+      'components.support-list',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: '';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -410,6 +446,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Button: Schema.Attribute.Component<'components.button', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -467,6 +504,7 @@ export interface ApiSocialSocial extends Struct.CollectionTypeSchema {
 export interface ApiSupportSupport extends Struct.CollectionTypeSchema {
   collectionName: 'supports';
   info: {
+    description: '';
     displayName: 'Support';
     pluralName: 'supports';
     singularName: 'support';
@@ -475,6 +513,7 @@ export interface ApiSupportSupport extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Button: Schema.Attribute.Component<'components.button', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1003,6 +1042,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::brand-color.brand-color': ApiBrandColorBrandColor;
+      'api::home.home': ApiHomeHome;
       'api::service.service': ApiServiceService;
       'api::social.social': ApiSocialSocial;
       'api::support.support': ApiSupportSupport;

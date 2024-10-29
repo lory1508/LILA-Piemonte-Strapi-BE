@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_components_support_lists",
+  "info": {
+    "displayName": "SupportList"
+  },
+  "options": {},
+  "attributes": {
+    "supports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::support.support"
+    }
+  }
+}
